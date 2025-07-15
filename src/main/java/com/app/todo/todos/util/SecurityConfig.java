@@ -65,7 +65,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration cfg = new CorsConfiguration();
-        cfg.setAllowedOrigins(List.of("http://localhost:5000", "http://127.0.0.1:5000", "http://localhost:8080", "http://localhost:54816"));
+        cfg.setAllowedOrigins(List.of("http://localhost:5000", "http://127.0.0.1:5000", "http://localhost:8080", "http://localhost:54816", "https://todos-api-xqqr.onrender.com"));
         cfg.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         cfg.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         cfg.setAllowCredentials(true);
