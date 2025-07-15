@@ -2,12 +2,15 @@
 FROM eclipse-temurin:17-jdk AS build
 WORKDIR /workspace
 
-COPY mvnw* .mvn/ pom.xml /workspace/
+COPY mvnw ./
+COPY .mvn/ .mvn/
+COPY pom.xml ./
+
+RUN chmod +x mvnw
 RUN ./mvnw -B -ntp dependency:go-offline
 
-COPY src /workspace/src
-RUN ./mvnw -B -ntp clean package -DskipTests \
-    && echo "Built JARs:" && ls -l target/*.jar
+COPY src/ src/
+RUN ./mvnw -B -ntp clean package -DskipTests
 
 # ---------- 2. Run Stage ----------
 FROM eclipse-temurin:17-jre-jammy
