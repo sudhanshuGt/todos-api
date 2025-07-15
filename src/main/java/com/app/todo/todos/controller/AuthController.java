@@ -2,15 +2,18 @@ package com.app.todo.todos.controller;
 
  
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.app.todo.todos.model.AuthRequest;
 import com.app.todo.todos.model.AuthResponse;
 import com.app.todo.todos.model.SignupRequest;
+import com.app.todo.todos.service.UserService;
 import com.app.todo.todos.util.JwtUtil;
- 
-import com.app.todo.todos.service.*;
+
 @RestController
 @RequestMapping("/auth")
 @CrossOrigin
