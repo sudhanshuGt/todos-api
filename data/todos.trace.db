@@ -1,0 +1,3 @@
+2025-07-14 22:36:54.302401+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TODO CHARACTER VARYING(255)": "'this is very long todo this is very long todo this is very long todo this is ve... (736)"; SQL statement:
+insert into todo (completed,todo,user_id,id) values (?,?,?,default) [22001-232]
